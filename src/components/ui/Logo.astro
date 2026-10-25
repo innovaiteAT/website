@@ -1,0 +1,14 @@
+---
+// Offizielles Logo (PNG). Wird später durch eine SVG-Version ersetzt, siehe docs/BRAND.md.
+import { Image } from 'astro:assets';
+import logo from '../../assets/innovaite-logo.png';
+
+interface Props {
+  width?: number;
+  eager?: boolean;
+}
+
+const { width = 160, eager = false } = Astro.props;
+---
+
+<Image src={logo} alt="innovAIte" width={width} loading={eager ? 'eager' : 'lazy'} />

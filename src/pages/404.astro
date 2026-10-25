@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { de } from '../i18n/de';
+---
+
+<BaseLayout title={`${de.notFound.title} – innovAIte`} description={de.notFound.text}>
+  <section class="ia-section notfound">
+    <h1>{de.notFound.title}</h1>
+    <p class="ia-lead">{de.notFound.text}</p>
+    <a class="ia-btn" href="/">{de.notFound.back}</a>
+  </section>
+</BaseLayout>
+
+<style>
+  .notfound { min-height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+  h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin: 0 0 1rem; }
+</style>

@@ -1,0 +1,41 @@
+---
+import LegalPage from '../components/ui/LegalPage.astro';
+import { SITE } from '../config';
+---
+
+<LegalPage title="Impressum" description="Impressum von innovAIte, der gemeinnützigen KI-Initiative von Studierenden in Wien.">
+  <p>Informationspflicht laut § 5 E-Commerce-Gesetz, § 14 Unternehmensgesetzbuch, § 63 Gewerbeordnung und Offenlegungspflicht laut § 25 Mediengesetz.</p>
+
+  <h2>Verein</h2>
+  <p>
+    {SITE.legalName}<br />
+    {SITE.address.street}, {SITE.address.postalCode} {SITE.address.city}, Österreich<br />
+    Vereinssitz: Wien<br />
+    ZVR-Zahl: {SITE.zvr}
+  </p>
+
+  <h2>Vertretung</h2>
+  <p>Patrik Stachura, Raphael Zährer (Gründer, organschaftliche Vertreter)</p>
+
+  <h2>Kontakt</h2>
+  <p>E-Mail: <a href={`mailto:${SITE.email}`}>{SITE.email}</a></p>
+
+  <h2>Vereinszweck</h2>
+  <p>
+    Der Verein ist nicht auf Gewinn ausgerichtet. Er fördert Bildung, Forschung und Anwendung im Bereich künstlicher Intelligenz und digitaler Innovation,
+    unterstützt Institutionen bei der digitalen Transformation, fördert die persönliche Weiterentwicklung seiner Mitglieder, baut Netzwerke auf und
+    sensibilisiert für ethische und gesellschaftliche Aspekte der KI-Nutzung.
+  </p>
+
+  <h2>Haftung für Inhalte und Links</h2>
+  <p>
+    Wir erstellen die Inhalte dieser Website mit Sorgfalt, übernehmen aber keine Gewähr für Richtigkeit, Vollständigkeit und Aktualität. Wenn dir
+    problematische Inhalte auffallen, schreib uns bitte. Für Inhalte verlinkter externer Seiten sind ausschließlich deren Betreiber verantwortlich.
+  </p>
+
+  <h2>Urheberrecht</h2>
+  <p>Die Inhalte dieser Website unterliegen dem österreichischen Urheberrecht. Eine Verwertung außerhalb der gesetzlichen Schranken braucht die schriftliche Zustimmung der jeweiligen Urheber:innen.</p>
+
+  <h2>Streitbeilegung</h2>
+  <p>Wir sind weder bereit noch verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+</LegalPage>

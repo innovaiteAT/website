@@ -1,0 +1,9 @@
+[
+  { "id": "operations", "name": "Operations", "description": "Beschreibung folgt.", "order": 1 },
+  { "id": "it", "name": "IT", "description": "Beschreibung folgt.", "order": 2 },
+  { "id": "finance", "name": "Finance", "description": "Beschreibung folgt.", "order": 3 },
+  { "id": "corporate-relations", "name": "Corporate Relations", "description": "Beschreibung folgt.", "order": 4 },
+  { "id": "marketing", "name": "Marketing", "description": "Beschreibung folgt.", "order": 5 },
+  { "id": "sustainability-compliance", "name": "Sustainability Compliance", "description": "Beschreibung folgt.", "order": 6 },
+  { "id": "legal", "name": "Legal", "description": "Beschreibung folgt.", "order": 7 }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "wer-kann-mitmachen",
+    "question": "Wer kann bei innovAIte mitmachen?",
+    "answer": "Alle, die neugierig auf KI sind. Du brauchst keine Vorkenntnisse. Neugier und Engagement zählen mehr als Erfahrung.",
+    "order": 1
+  },
+  {
+    "id": "zeitaufwand",
+    "question": "Wie viel Zeit sollte ich pro Woche einplanen?",
+    "answer": "Rechne mit etwa 3 bis 5 Stunden pro Woche. Wie du dir die Zeit einteilst, ist flexibel.",
+    "order": 2
+  },
+  {
+    "id": "kosten",
+    "question": "Was kostet eine Mitgliedschaft?",
+    "answer": "Nichts. innovAIte ist ein ehrenamtlicher, gemeinnütziger Verein ohne Mitgliedsbeitrag.",
+    "order": 3
+  },
+  {
+    "id": "unterschied",
+    "question": "Was unterscheidet innovAIte von anderen Initiativen?",
+    "answer": "Wir verbinden technisches Können, unternehmerisches Denken und echte Projekte mit Unternehmen. Ohne Konkurrenzdruck, auf Augenhöhe.",
+    "order": 4
+  }
+]

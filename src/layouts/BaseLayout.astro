@@ -1,0 +1,63 @@
+---
+import '@fontsource/montserrat/300.css';
+import '@fontsource/montserrat/400.css';
+import '@fontsource/montserrat/500.css';
+import '@fontsource/montserrat/600.css';
+import '@fontsource/montserrat/700.css';
+import '@fontsource/montserrat/800.css';
+import '../styles/global.css';
+import Header from '../components/ui/Header.astro';
+import Footer from '../components/ui/Footer.astro';
+import { getCollection } from 'astro:content';
+import { SITE } from '../config';
+import { de } from '../i18n/de';
+import { graph, organization, website } from '../lib/seo';
+
+interface Props {
+  title?: string;
+  description?: string;
+  /** Zusätzliche JSON-LD-Knoten für diese Seite */
+  jsonLd?: Record<string, unknown>[];
+}
+
+const { title = de.meta.title, description = de.meta.description, jsonLd = [] } = Astro.props;
+const canonical = new URL(Astro.url.pathname, SITE.url).href;
+const ogImage = new URL('/og.png', SITE.url).href;
+const founders = await getCollection('team', (p) => p.data.role.includes('Founder'));
+const structuredData = graph(organization(founders), website(), ...jsonLd);
+---
+
+<!doctype html>
+<html lang={SITE.locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="theme-color" content="#010308" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="de_AT" />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </head>
+  <body>
+    <a class="ia-skip" href="#inhalt">{de.skipLink}</a>
+    <Header />
+    <main id="inhalt">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

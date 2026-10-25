@@ -1,0 +1,7 @@
+[
+  { "id": "torino", "name": "Torino", "order": 1 },
+  { "id": "basenbox", "name": "Basenbox", "order": 2 },
+  { "id": "wu", "name": "WU Wien", "url": "https://www.wu.ac.at", "order": 3 },
+  { "id": "raiffeisen-software", "name": "Raiffeisen Software", "order": 4 },
+  { "id": "roiss-weiss", "name": "Roiss-Weiss GmbH", "order": 5 }
+]

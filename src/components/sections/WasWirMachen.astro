@@ -1,0 +1,28 @@
+---
+import { de } from '../../i18n/de';
+---
+
+<section id="was-wir-machen" class="ia-section" aria-labelledby="was-wir-machen-title">
+  <div class="ia-container">
+    <h2 id="was-wir-machen-title">{de.wasWirMachen.title}</h2>
+    <p class="ia-lead">{de.wasWirMachen.lead}</p>
+    <ol class="timeline">
+      {de.wasWirMachen.items.map((item) => (
+        <li>
+          <h3>{item.title}</h3>
+          <p>{item.text}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<style>
+  /* Vertikale Timeline nach Brand-Vorgabe (vereinfacht: Linie links) */
+  .timeline { list-style: none; margin: 0; padding: 0 0 0 48px; position: relative; display: grid; gap: 2.5rem; }
+  .timeline::before { content: ''; position: absolute; left: 12px; top: 0; bottom: 0; width: 2px; background: var(--ia-text); }
+  .timeline li { position: relative; }
+  .timeline li::before { content: ''; position: absolute; left: -48px; top: 6px; width: 26px; height: 26px; border-radius: 6px; background: var(--ia-text); }
+  h3 { font: italic 600 clamp(1.4rem, 3vw, 2rem)/1.2 var(--ia-font); margin: 0 0 .5rem; }
+  p { font: italic 300 1.15rem/1.55 var(--ia-font); color: var(--ia-text-soft); margin: 0; max-width: 60ch; }
+</style>

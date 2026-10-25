@@ -1,0 +1,18 @@
+---
+import { de } from '../../i18n/de';
+---
+
+<section id="fuer-dich" class="ia-section" aria-labelledby="fuer-dich-title">
+  <div class="ia-container">
+    <h2 id="fuer-dich-title">{de.fuerDich.title}</h2>
+    <ul class="list">
+      {de.fuerDich.items.map((item) => <li>{item}</li>)}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .list { list-style: none; padding: 0; margin: 0; display: grid; gap: 1rem; font-size: 1.15rem; }
+  .list li { padding-left: 2rem; position: relative; }
+  .list li::before { content: '✓'; position: absolute; left: 0; color: var(--ia-cyan); font-weight: 700; }
+</style>

@@ -1,0 +1,31 @@
+---
+// Der One-Pager. Reihenfolge der Sektionen frei wählbar, Pflicht-Sektionen siehe CLAUDE.md.
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+import FuerDich from '../components/sections/FuerDich.astro';
+import UeberUns from '../components/sections/UeberUns.astro';
+import WasWirMachen from '../components/sections/WasWirMachen.astro';
+import Departments from '../components/sections/Departments.astro';
+import Partner from '../components/sections/Partner.astro';
+import Statement from '../components/sections/Statement.astro';
+import Team from '../components/sections/Team.astro';
+import Faq from '../components/sections/Faq.astro';
+import Mitmachen from '../components/sections/Mitmachen.astro';
+import { faqPage } from '../lib/seo';
+
+const faq = (await getCollection('faq')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout jsonLd={[faqPage(faq)]}>
+  <Hero />
+  <FuerDich />
+  <UeberUns />
+  <WasWirMachen />
+  <Partner />
+  <Departments />
+  <Statement />
+  <Team />
+  <Faq />
+  <Mitmachen />
+</BaseLayout>

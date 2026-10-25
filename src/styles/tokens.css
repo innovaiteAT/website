@@ -1,0 +1,33 @@
+/* innovAIte Design-Tokens. Quelle: design/brand/innovaite.css – Werte hier nicht verändern. */
+:root {
+  --ia-black: #010308;
+  --ia-surface: #16181B;
+  --ia-surface-2: #1E2024;
+  --ia-border: #38383D;
+  --ia-divider: #6B6B6E;
+  --ia-muted: #5D5E61;
+  --ia-text: #F8F8F8;
+  --ia-text-soft: #DADADA;
+  --ia-light: #F8F8F8;
+  --ia-ink: #010101;
+  --ia-ink-soft: #3D3F44;
+  --ia-red: #7D1717;
+  --ia-red-hover: #9A1F1F;
+  --ia-red-bright: #F43721;
+  --ia-wave-red: #AC0000;
+  --ia-blue: #0181E7;
+  --ia-cyan: #38BCFD;
+  --ia-font: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  --ia-radius-pill: 999px;
+  --ia-radius-field: 6px;
+  --ia-radius-card: 16px;
+  --ia-focus-ring: 0 0 0 3px rgba(1, 129, 231, .45);
+  --ia-gutter: clamp(16px, 7vw, 110px);
+  --ia-max: 1200px;
+  /* Ersatz für den Wellen-Hintergrund, bis die neuen Wellen da sind */
+  --ia-waves:
+    radial-gradient(60% 50% at 82% 25%, rgba(172, 0, 0, .28), transparent 70%),
+    radial-gradient(55% 60% at 70% 95%, rgba(1, 129, 231, .22), transparent 70%),
+    radial-gradient(40% 50% at 15% 80%, rgba(1, 129, 231, .12), transparent 70%),
+    var(--ia-black);
+}

@@ -1,0 +1,33 @@
+---
+import LegalPage from '../components/ui/LegalPage.astro';
+import { SITE } from '../config';
+---
+
+<LegalPage title="Datenschutzerklärung" description="Wie innovAIte personenbezogene Daten verarbeitet, zum Beispiel bei einer Bewerbung über das Formular.">
+  <p class="draft">
+    <strong>Entwurf.</strong> Diese Datenschutzerklärung wird vor dem Go-Live vollständig neu geschrieben und rechtlich geprüft. Die Punkte unten
+    beschreiben, was die neue Website verarbeitet.
+  </p>
+
+  <h2>Verantwortlich</h2>
+  <p>{SITE.legalName}, {SITE.address.street}, {SITE.address.postalCode} {SITE.address.city}. E-Mail: <a href={`mailto:${SITE.email}`}>{SITE.email}</a></p>
+
+  <h2>Bewerbung über das Formular</h2>
+  <p>
+    Wenn du dich bewirbst, speichern wir deinen Namen, deine E-Mail-Adresse, deine Department-Auswahl, wie du von uns gehört hast und weitere freiwillige
+    Angaben aus dem Formular. Rechtsgrundlage ist deine Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Die Daten liegen bei Cloudflare in der EU und werden
+    nach 12 Monaten gelöscht. Du kannst deine Einwilligung jederzeit per E-Mail widerrufen.
+  </p>
+
+  <h2>Spam-Schutz</h2>
+  <p>Zum Schutz vor Spam nutzen wir Cloudflare Turnstile. Dabei verarbeitet Cloudflare technische Daten deines Browsers.</p>
+
+  <h2>Hosting und Statistik</h2>
+  <p>Die Website läuft bei Cloudflare. Für die Besucherstatistik nutzen wir Cloudflare Web Analytics ohne Cookies.</p>
+
+  <h2>Deine Rechte</h2>
+  <p>
+    Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch. Beschwerden kannst du bei der
+    österreichischen Datenschutzbehörde einreichen.
+  </p>
+</LegalPage>

@@ -1,0 +1,20 @@
+[
+  { "id": "patrik-stachura", "name": "Patrik Stachura", "role": "Co-Founder & CEO", "group": "leitung", "order": 1 },
+  { "id": "raphael-zaehrer", "name": "Raphael Zährer", "role": "Co-Founder & Head of IT", "group": "leitung", "order": 2 },
+  { "id": "jonatan-acho", "name": "Jonatan Acho", "role": "Head of Finance", "group": "leitung", "order": 3 },
+  { "id": "aleksa-dacic", "name": "Aleksa Dačić", "role": "Head of Legal", "group": "leitung", "order": 4 },
+  { "id": "pavle-cvijanovic", "name": "Pavle Cvijanović", "role": "Head of Sustainability Compliance", "group": "leitung", "order": 5 },
+  { "id": "julia-kafka", "name": "Julia Kafka", "role": "Head of Marketing", "group": "leitung", "order": 6 },
+  { "id": "aleksandar-petrovic", "name": "Aleksandar Petrovic", "role": "Digital Content & Design Coordinator", "group": "team", "order": 7 },
+  { "id": "yoana-sevilya", "name": "Yoana Sevilya", "role": "Corporate Relations Lead", "group": "team", "order": 8 },
+  { "id": "boldi-tanyi", "name": "Boldi Tanyi", "role": "Digital Strategy Lead & Marketing Associate", "group": "team", "order": 9 },
+  { "id": "andrei-sticlaru", "name": "Andrei Sticlaru", "role": "Software Systems & Projects Engineer", "group": "team", "order": 10 },
+  { "id": "johanna-brunner", "name": "Johanna Brunner", "role": "Associate", "group": "associates", "order": 11 },
+  { "id": "somrey-estelle-ott", "name": "Somrey Estelle Ott", "role": "Associate", "group": "associates", "order": 12 },
+  { "id": "matija-cepulic-polgar", "name": "Matija Ćepulić Polgar", "role": "Associate", "group": "associates", "order": 13 },
+  { "id": "katarina-karacic", "name": "Katarina Karačić", "role": "Associate", "group": "associates", "order": 14 },
+  { "id": "david-juranek", "name": "David Juranek", "role": "Associate", "group": "associates", "order": 15 },
+  { "id": "adrian-preg", "name": "Adrian Preg", "role": "Associate", "group": "associates", "order": 16 },
+  { "id": "mohammad-rasoolzadeh", "name": "Mohammad Rasoolzadeh", "role": "Associate", "group": "associates", "order": 17 },
+  { "id": "jaron-westpfahl", "name": "Jaron Westpfahl", "role": "Associate", "group": "associates", "order": 18 }
+]

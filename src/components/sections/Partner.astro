@@ -1,0 +1,42 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import { getCollection } from 'astro:content';
+import { de } from '../../i18n/de';
+
+const partners = (await getCollection('partners')).sort((a, b) => a.data.order - b.data.order);
+
+// Logos liegen in design/partners/<id>.svg|png|webp (siehe README dort). Fehlt ein Logo, wird der Name angezeigt.
+const logos = import.meta.glob<{ default: ImageMetadata }>('/design/partners/*.{svg,png,webp}', { eager: true });
+const logoFor = (id: string) =>
+  Object.entries(logos).find(([path]) => path.split('/').pop()?.replace(/\.\w+$/, '') === id)?.[1].default;
+---
+
+<!-- Hell, weil die Partner-Logos dunkel sind und auf #010308 unsichtbar wären. -->
+<section id="partner" class="ia-section ia-section-light" aria-labelledby="partner-title">
+  <div class="ia-container">
+    <h2 id="partner-title">{de.partner.title}</h2>
+    <p class="ia-lead">{de.partner.lead}</p>
+    <ul class="logos">
+      {partners.map((p) => {
+        const logo = logoFor(p.id);
+        const content = logo ? <Image src={logo} alt={p.data.name} height={56} /> : <span class="name">{p.data.name}</span>;
+        return (
+          <li>
+            {p.data.url ? <a href={p.data.url} rel="noopener">{content}</a> : content}
+            {p.data.description && <p>{p.data.description}</p>}
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .logos { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
+  .logos li { display: grid; place-items: center; gap: .5rem; min-height: 120px; padding: 1.25rem; border: 1px solid var(--ia-text-soft); border-radius: var(--ia-radius-card); }
+  .logos img { max-height: 56px; width: auto; object-fit: contain; }
+  .logos a { color: inherit; text-decoration: none; }
+  .name { font-weight: 600; font-size: 1.15rem; color: var(--ia-ink); }
+  .logos p { margin: 0; font-size: .9rem; }
+</style>

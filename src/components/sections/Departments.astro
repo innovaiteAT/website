@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+import { de } from '../../i18n/de';
+
+const departments = (await getCollection('departments')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<section id="departments" class="ia-section" aria-labelledby="departments-title">
+  <div class="ia-container">
+    <h2 id="departments-title">{de.departments.title}</h2>
+    <p class="ia-lead">{de.departments.lead}</p>
+    <div class="ia-grid">
+      {departments.map((d) => (
+        <article class="ia-card">
+          <h3>{d.data.name}</h3>
+          <p>{d.data.description}</p>
+          <a class="interest" href="#mitmachen" data-department={d.id}>{de.departments.interest}</a>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .ia-card { display: flex; flex-direction: column; gap: .75rem; }
+  .interest { margin-top: auto; font-weight: 600; min-height: 44px; display: inline-flex; align-items: center; }
+</style>
+
+<script>
+  // „Interessiert mich“ wählt das Department im Bewerbungsformular vor.
+  document.querySelectorAll<HTMLAnchorElement>('[data-department]').forEach((link) => {
+    link.addEventListener('click', () => {
+      const box = document.querySelector<HTMLInputElement>(`input[name="departments"][value="${link.dataset.department}"]`);
+      if (box) box.checked = true;
+    });
+  });
+</script>

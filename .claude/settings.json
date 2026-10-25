@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(npm run dev)",
+      "Bash(npm run build)",
+      "Bash(npm run preview)",
+      "Bash(npm run check)",
+      "Bash(npm run lint)",
+      "Bash(npm run format)",
+      "Bash(npm install)",
+      "Bash(npm ci)",
+      "Bash(npx astro check)",
+      "Bash(npx astro sync)",
+      "Bash(npx wrangler types)",
+      "Bash(npx wrangler dev:*)",
+      "Bash(npx wrangler d1 migrations apply innovaite-db --local)",
+      "Bash(npx wrangler d1 execute innovaite-db --local:*)",
+      "Bash(git status)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git branch:*)",
+      "WebFetch(domain:docs.astro.build)",
+      "WebFetch(domain:developers.cloudflare.com)",
+      "WebFetch(domain:innovaite.at)",
+      "WebFetch(domain:schema.org)"
+    ],
+    "ask": [
+      "Bash(npx wrangler deploy:*)",
+      "Bash(npx wrangler secret:*)",
+      "Bash(npx wrangler d1 create:*)",
+      "Bash(npx wrangler d1 execute innovaite-db --remote:*)",
+      "Bash(npx wrangler d1 migrations apply innovaite-db --remote)",
+      "Bash(git push:*)"
+    ],
+    "deny": [
+      "Read(./.dev.vars)",
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Edit(./design/brand/**)",
+      "Write(./design/brand/**)"
+    ]
+  }
+}

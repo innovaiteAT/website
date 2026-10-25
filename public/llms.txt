@@ -1,0 +1,27 @@
+# innovAIte
+
+> innovAIte ist eine gemeinnützige, ehrenamtliche Studierenden-Initiative aus Wien (1030). Wir erforschen künstliche Intelligenz gemeinsam, lernen ihre verantwortungsvolle Nutzung und bringen Automatisierungen, Optimierungen und KI in Unternehmen.
+
+## Kernfakten
+
+- Mitgliedschaft: kostenlos, keine Vorkenntnisse nötig
+- Zeitaufwand: etwa 3 bis 5 Stunden pro Woche, flexibel
+- Departments: Operations, IT, Finance, Corporate Relations, Marketing, Sustainability Compliance, Legal
+- Partner: Torino, Basenbox, WU Wien, Raiffeisen Software, Roiss-Weiss GmbH
+- Ort: Wien, Österreich
+- Kontakt: innovaite-verein@outlook.com
+
+## Seite
+
+- [Über uns](https://innovaite.at/#ueber-uns): Wer wir sind und unsere Kernziele
+- [Was wir machen](https://innovaite.at/#was-wir-machen): KI, Automatisierung und Optimierung in Unternehmen
+- [Departments](https://innovaite.at/#departments): Woran die Departments arbeiten
+- [Partner](https://innovaite.at/#partner): Unsere Partnerschaften
+- [Team](https://innovaite.at/#team): Leitung und Mitglieder
+- [FAQ](https://innovaite.at/#faq): Häufige Fragen zu Mitgliedschaft, Kosten und Zeitaufwand
+- [Mitglied werden](https://innovaite.at/#mitmachen): Bewerbung
+
+## Rechtliches
+
+- [Impressum](https://innovaite.at/impressum)
+- [Datenschutzerklärung](https://innovaite.at/datenschutzerklaerung)

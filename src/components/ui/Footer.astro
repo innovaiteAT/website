@@ -1,0 +1,42 @@
+---
+import Logo from './Logo.astro';
+import { SITE } from '../../config';
+import { de } from '../../i18n/de';
+---
+
+<footer class="footer">
+  <div class="ia-container cols">
+    <div>
+      <Logo width={140} />
+      <p class="claim">{de.hero.claim}</p>
+    </div>
+    <nav aria-label={de.footer.navTitle}>
+      <h2>{de.footer.navTitle}</h2>
+      <ul>{de.nav.items.map((item) => <li><a href={`/${item.href}`}>{item.label}</a></li>)}</ul>
+    </nav>
+    <div>
+      <h2>{de.footer.legalTitle}</h2>
+      <ul>
+        <li><a href="/impressum">{de.footer.impressum}</a></li>
+        <li><a href="/datenschutzerklaerung">{de.footer.datenschutz}</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>{de.footer.contactTitle}</h2>
+      <ul>
+        <li><a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
+        <li>{SITE.address.postalCode} {SITE.address.city}, Österreich</li>
+        <li><a href={SITE.social.linkedin} rel="noopener">LinkedIn</a> · <a href={SITE.social.instagram} rel="noopener">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer { border-top: 1px solid var(--ia-border); padding: 56px var(--ia-gutter); color: var(--ia-text-soft); font-size: .95rem; }
+  .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; }
+  h2 { font-size: 1rem; font-weight: 600; color: var(--ia-text); margin: 0 0 .75rem; }
+  ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .4rem; }
+  a { color: var(--ia-text-soft); }
+  .claim { margin: 1rem 0 0; }
+</style>

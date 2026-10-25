@@ -1,0 +1,24 @@
+---
+import { de } from '../../i18n/de';
+---
+
+<section id="ueber-uns" class="ia-section" aria-labelledby="ueber-uns-title">
+  <div class="ia-container">
+    <h2 id="ueber-uns-title">{de.ueberUns.title}</h2>
+    <p class="ia-lead">{de.ueberUns.lead}</p>
+    <h3 class="goals-title">{de.ueberUns.goalsTitle}</h3>
+    <div class="ia-grid">
+      {de.ueberUns.goals.map((goal) => (
+        <article class="ia-card">
+          <h4>{goal.title}</h4>
+          <p>{goal.text}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .goals-title { font-size: 1.4rem; font-weight: 600; margin: 0 0 1.25rem; }
+  h4 { margin: 0 0 .5rem; font-weight: 600; font-size: 1.2rem; }
+</style>
