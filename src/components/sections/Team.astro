@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import { de } from '../../i18n/de';
+import { photoFor } from '../../lib/photos';
 
 const team = (await getCollection('team')).sort((a, b) => a.data.order - b.data.order);
 const groups = (['leitung', 'team', 'associates'] as const).map((key) => ({
@@ -20,6 +22,7 @@ const groups = (['leitung', 'team', 'associates'] as const).map((key) => ({
         <ul class="ia-grid members">
           {group.members.map((m) => (
             <li class="ia-card">
+              <Image class="photo" src={photoFor('team', m.id)} alt={m.data.name} width={400} />
               <p class="name">{m.data.name}</p>
               <p>{m.data.role}</p>
             </li>
@@ -34,4 +37,6 @@ const groups = (['leitung', 'team', 'associates'] as const).map((key) => ({
   h3 { font-size: 1.3rem; font-weight: 600; margin: 2.5rem 0 1rem; }
   .members { list-style: none; padding: 0; margin: 0; }
   .name { color: var(--ia-text); font-weight: 600; margin-bottom: .25rem; }
+  /* Quadratischer Zuschnitt im Browser, oben ausgerichtet (der Bildservice ignoriert `position`) */
+  .photo { width: 100%; aspect-ratio: 1; object-fit: cover; object-position: top; border-radius: calc(var(--ia-radius-card) - 6px); margin-bottom: 1rem; }
 </style>

@@ -94,6 +94,7 @@ Details und Checkliste: `docs/SEO-AEO.md`. Weil alles auf einer URL liegt, zähl
 - Sektionen als eigene Komponenten in `src/components/sections/`, zusammengesetzt in `src/pages/index.astro`. Eine Sektion soll möglichst für sich funktionieren (eigene Styles im Component, nur Tokens und `ui/`-Bausteine von außen), damit sie in eine andere Version übertragbar ist.
 - Anker-IDs deutsch, klein, mit Bindestrich (`#ueber-uns`, `#mitmachen`). Einmal veröffentlichte Anker nicht mehr umbenennen.
 - Inhalte (Team, FAQ, Departments, Partner) gehören in Content Collections, UI-Texte in `src/i18n/de.ts`. Keine sichtbaren Strings direkt in Komponenten (Englisch kommt später).
+- Fotos (Team, später Events) immer über `photoFor()` aus `src/lib/photos.ts` mit `<Image>` aus `astro:assets` einbinden. Vorerst zeigt jedes Foto den Platzhalter `src/assets/photos/cosmo_standing.jpeg` (`photosPlaceholderOnly` in `src/config.ts`). Keine Stockfotos, keine KI-generierten Personenfotos.
 - Client-JS nur als Astro Island, wo es wirklich gebraucht wird (Bewerbungs-Wizard, aktive Navigation).
 - Performance trotz langer Seite: Bilder lazy laden (außer Hero), keine großen Bundles.
 - Barrierefreiheit: WCAG AA, sichtbarer Fokus, Skip-Link, `prefers-reduced-motion`, Buttons mind. 44 px.

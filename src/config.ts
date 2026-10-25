@@ -16,6 +16,8 @@ export const SITE = {
     instagram: 'https://www.instagram.com/innovaite.at/',
     linkedin: 'https://www.linkedin.com/company/innovaitevienna/',
   },
+  // Vorerst zeigt jedes Foto auf der Seite den Platzhalter (Cosmo). Auf false setzen, sobald echte Fotos da sind.
+  photosPlaceholderOnly: true,
   // Öffentlicher Turnstile-Schlüssel. Ohne Angabe gilt der Cloudflare-Testschlüssel (lässt immer durch).
   turnstileSiteKey: import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '1x00000000000000000000AA',
 } as const;

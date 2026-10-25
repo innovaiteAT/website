@@ -28,6 +28,7 @@ Die Seite läuft bereits, schlicht und funktional. Alle Pflicht-Sektionen sind d
 | Texte | `src/i18n/de.ts` |
 | Team, FAQ, Departments, Partner | `src/content/*.json` |
 | Farben, Buttons, Karten | `src/styles/tokens.css`, `src/styles/global.css` |
+| Fotos (vorerst überall Cosmo) | `src/assets/photos/`, einbinden mit `photoFor()` aus `src/lib/photos.ts` |
 | Bewerbung (Server) | `src/pages/api/bewerbung.ts`, `src/lib/application.ts` |
 | Eingegangene Test-Bewerbungen ansehen | `npm run db:list` |
 
