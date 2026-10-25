@@ -2,13 +2,15 @@
 
 Jedes Mitglied baut lokal auf dem eigenen PC **eine eigene, komplette Version** der neuen innovAIte-Website. Am Ende schaut sich die Projektleitung alle Versionen an und übernimmt die beste bzw. die besten Teile aus mehreren Versionen in die echte Seite.
 
-Du pushst nichts, deployst nichts und brauchst keinen Cloudflare-Zugang.
+Du pushst nichts, deployst nichts und brauchst keinen Cloudflare-Zugang. Das GitHub-Repo ist nur der Startpunkt: klonen ja, pushen nein.
 
 ## Loslegen
 
 1. **Node.js 24** installieren (mindestens 22.23.4, sonst startet Astro nicht): [nodejs.org](https://nodejs.org). Prüfen mit `node -v`.
-2. Repo klonen bzw. Zip entpacken, im Terminal im Projektordner:
+2. Repo klonen und im Terminal in den Projektordner wechseln:
    ```bash
+   git clone https://github.com/innovaiteAT/website.git innovaite-website
+   cd innovaite-website
    npm install
    npm run db:migrate   # lokale Datenbank anlegen (einmalig)
    npm run dev          # http://localhost:4321
@@ -17,6 +19,8 @@ Du pushst nichts, deployst nichts und brauchst keinen Cloudflare-Zugang.
 3. Claude Code in diesem Ordner starten. Claude liest `CLAUDE.md` automatisch und kennt damit alle Regeln, das Branding und den Plan.
 4. Lies einmal `CLAUDE.md` (Abschnitt „Fest vs. Spielraum“) und `docs/BRAND.md`.
 5. Trag deinen Namen in `VARIANTE.md` ein und leg los.
+
+Committe deine Zwischenstände ruhig lokal (`git commit`). So kannst du jederzeit zurück, und die Projektleitung sieht später, wie deine Version entstanden ist. Nur `git push` bitte nie.
 
 ## Was schon da ist
 
@@ -62,7 +66,7 @@ Alles unter „Fest“ in `CLAUDE.md`: One-Pager, Technik, Branding, Datenschutz
 
 1. `VARIANTE.md` ausfüllen: deine wichtigsten Entscheidungen und warum.
 2. Screenshots (Desktop und Handy) in `variante/screenshots/` legen.
-3. Projektordner zippen, **ohne** `node_modules`, `dist`, `.astro` und `.wrangler`.
+3. Projektordner zippen (inklusive `.git`, damit deine Commits mitkommen), **ohne** `node_modules`, `dist`, `.astro`, `.wrangler` und `.dev.vars`.
 4. Zip an die Projektleitung schicken: Raphael Zährer (raphael.zaehrer@innovaite.at).
 
 ## Claude Code
