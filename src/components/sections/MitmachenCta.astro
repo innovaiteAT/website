@@ -1,0 +1,18 @@
+---
+// Letzte Sektion der Startseite: Call to Action zur Bewerbungsseite /mitmachen.
+import { de } from '../../i18n/de';
+---
+
+<section id="mitmachen" class="ia-section cta" aria-labelledby="mitmachen-cta-title">
+  <div class="ia-container">
+    <h2 id="mitmachen-cta-title">{de.mitmachenCta.title}</h2>
+    <p class="ia-lead">{de.mitmachenCta.text}</p>
+    <a class="ia-btn" href="/mitmachen">{de.cta}</a>
+  </div>
+</section>
+
+<style>
+  .cta { background: var(--ia-waves); text-align: center; }
+  .cta h2 { font-size: clamp(2rem, 5vw, 3.2rem); }
+  .cta .ia-lead { margin-inline: auto; }
+</style>

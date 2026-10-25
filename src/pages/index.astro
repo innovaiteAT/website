@@ -11,6 +11,7 @@ import Partner from '../components/sections/Partner.astro';
 import Statement from '../components/sections/Statement.astro';
 import Team from '../components/sections/Team.astro';
 import Faq from '../components/sections/Faq.astro';
+import MitmachenCta from '../components/sections/MitmachenCta.astro';
 import { faqPage } from '../lib/seo';
 
 const faq = (await getCollection('faq')).sort((a, b) => a.data.order - b.data.order);
@@ -26,5 +27,6 @@ const faq = (await getCollection('faq')).sort((a, b) => a.data.order - b.data.or
   <Statement />
   <Team />
   <Faq />
-  <!-- Die Bewerbung liegt auf /mitmachen (D18) -->
+  <!-- Letzte Sektion ist immer der Call to Action. Die Bewerbung selbst liegt auf /mitmachen (D18). -->
+  <MitmachenCta />
 </BaseLayout>

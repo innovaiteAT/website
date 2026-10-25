@@ -72,6 +72,10 @@ export const de = {
   faq: {
     title: 'Häufige Fragen',
   },
+  mitmachenCta: {
+    title: 'Werde Teil des Teams!',
+    text: 'Mitmachen ist kostenlos und braucht keine Vorkenntnisse. Bewirb dich in wenigen Minuten.',
+  },
   mitmachen: {
     meta: {
       title: 'Mitglied werden – innovAIte',

@@ -29,6 +29,7 @@ Die Seite ist statisch vorgerendert: schnell, billig, perfekt für Crawler. Serv
 | 7 | Statement | – | „Nicht KI nimmt Jobs …“ + Button | hell |
 | 8 | Team | `#team` | Leitung hervorgehoben, restliches Team im Raster | dunkel |
 | 9 | FAQ | `#faq` | Akkordeon mit `<details>` | dunkel oder hell |
+| 10 | Werde Teil des Teams! | `#mitmachen` | Call to Action mit Button zu `/mitmachen`. Immer die letzte Sektion | dunkel + Wellen |
 | – | Footer | – | Kontakt, Social, Impressum, Datenschutz | dunkel |
 
 Navigation im Header: Über uns · Was wir machen · Partner · Team · FAQ · Button „Mitglied werden!“ (→ `/mitmachen`).
@@ -61,7 +62,7 @@ website/
 │  ├─ lib/application.ts     Validierung der Bewerbung (Zod), lib/turnstile.ts, lib/mail.ts
 │  ├─ assets/                Logo (SVG hell/dunkel), Wellen (AVIF/WebP), Team-Fotos – über astro:assets optimiert
 │  ├─ components/
-│  │  ├─ sections/           Hero, FuerDich, UeberUns, WasWirMachen, Departments, Partner, Statement, Team, Faq, Mitmachen (nur auf /mitmachen)
+│  │  ├─ sections/           Hero, FuerDich, UeberUns, WasWirMachen, Departments, Partner, Statement, Team, Faq, MitmachenCta, Mitmachen (nur auf /mitmachen)
 │  │  ├─ wizard/             Wizard-Schritte (Island)
 │  │  └─ ui/                 Button, Card, Timeline, Field, Header, Footer
 │  ├─ content/               team.json, faq.json, departments.json, partners.json

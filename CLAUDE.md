@@ -25,7 +25,7 @@ Diese Unterscheidung ist das Wichtigste in dieser Datei.
 - Alle Einträge unter „Fest“ in `docs/DECISIONS.md`
 
 - Dateistruktur: eine Datei pro Sektion in `src/components/sections/` mit den Namen aus `docs/ARCHITECTURE.md`, Inhalte in Content Collections. So lassen sich Sektionen aus verschiedenen Versionen später kombinieren.
-- Pflicht-Sektionen der Startseite: Hero, Über uns, Was wir machen, Departments, Partner, Team, FAQ, Footer. Dazu die Bewerbungsseite `/mitmachen`.
+- Pflicht-Sektionen der Startseite: Hero, Über uns, Was wir machen, Departments, Partner, Team, FAQ, Footer. **Letzte Sektion vor dem Footer ist immer der Call to Action „Werde Teil des Teams!“** (`sections/MitmachenCta.astro`, Anker `#mitmachen`) mit Button zu `/mitmachen`. Dazu die Bewerbungsseite `/mitmachen`.
 
 **Spielraum (wer die Version baut, entscheidet selbst):**
 - Gestaltung jeder Sektion: Layout, Animation, Bildsprache, Komponentenaufbau
