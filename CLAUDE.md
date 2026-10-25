@@ -74,7 +74,7 @@ Lokal braucht es keinen Cloudflare-Zugang: D1 läuft mit `--local`, Turnstile mi
 
 Quelle der Wahrheit: `docs/BRAND.md` und `design/brand/`. Kurzfassung:
 
-- Schreibweise immer **innovAIte**. Wortmarke: „AI“ in `#F43721`. **Ausnahme (fest):** Im Hero-Titel ist „AI“ weiß (`--ia-text`), nicht rot.
+- Schreibweise immer **innovAIte**. Wortmarke: „AI“ in `#F43721`. **Ausnahme (fest):** Im Hero-Titel ist „AI“ weiß (`--ia-text`) und nicht fett, also wie der Rest des Worts.
 - Offizielles Logo: `design/brand/innovaite_logo.png`. Icons und Favicons: `design/brand/innovaite_logo_sticker.png` (innovAIte-Kreis). Logo nie nachzeichnen ohne Abgleich mit dem PNG, nie verzerren oder umfärben.
 - Dunkler Grund `#010308`, helle Abschnitte `#F8F8F8`. Nie reines Weiß als Seitenhintergrund.
 - Montserrat (300 bis 800). Rot `#7D1717` = Handlung (Pill-Button), Blau `#0181E7` = Information.
