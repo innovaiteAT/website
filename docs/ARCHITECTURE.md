@@ -19,7 +19,7 @@ Die Seite ist statisch vorgerendert: schnell, billig, perfekt für Crawler. Serv
 
 | # | Sektion | Anker | Inhalt | Hintergrund |
 |---|---|---|---|---|
-| 1 | Hero | `#start` | Wortmarke, Claim, Linie, Lead, „Mitglied werden!“ | dunkel + Wellen |
+| 1 | Hero | `#start` | Wortmarke, Claim, Linie, Lead, „Mitglied werden!“. **Text fest**, siehe `CLAUDE.md` | dunkel + Wellen |
 | 2 | Für dich | `#fuer-dich` | „Hier bist du richtig, wenn du …“ (4 Punkte) | dunkel |
 | 3 | Über uns | `#ueber-uns` | Wer wir sind, Kernziele (3 Karten), Mission | dunkel |
 | 4 | Was wir machen | `#was-wir-machen` | Wir bringen KI, Automatisierung und Optimierung in Unternehmen. Wie so ein Projekt abläuft (z. B. als Timeline) | dunkel |

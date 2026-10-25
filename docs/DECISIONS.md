@@ -20,6 +20,7 @@ Hier stehen nur die **festen** Entscheidungen. Sie gelten für jede Version und 
 | D12 | Cloudflare Web Analytics | Cookielos, kein Cookie-Banner. Google-/Facebook-Remarketing entfällt. |
 | D14 | Keine Weekly-Projekte mehr. Fokus: Automatisierungen, Optimierungen und KI in Unternehmen einführen; Departments arbeiten eigenständig | Neue Ausrichtung des Vereins (25.10.2026). Sektion „Angebote“ wird zu `#was-wir-machen`. |
 | D15 | Eigene Sektion `#partner` mit Torino, Basenbox, WU Wien, Raiffeisen Software, Roiss-Weiss GmbH | Partnerschaften zeigen Glaubwürdigkeit (auch für SEO/AEO). Logos in `design/partners/`. |
+| D16 | Hero-Text ist fest und wird wortwörtlich übernommen (Titel, Claim, Text siehe CLAUDE.md) | Vorgabe des Vereins (25.10.2026) |
 | D13 | Keine Redirects nötig | Alte Sitemap hat nur `/`, `/impressum`, `/datenschutzerklaerung`, genau unsere URLs. |
 
 ## Domain und DNS (Ist-Stand 25.10.2026)

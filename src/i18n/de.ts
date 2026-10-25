@@ -18,9 +18,10 @@ export const de = {
       { href: '#faq', label: 'FAQ' },
     ],
   },
+  // FEST: Hero-Text wortwörtlich so lassen (Vorgabe des Vereins). Nicht umformulieren, nicht kürzen, keine Satzzeichen ergänzen.
   hero: {
-    claim: 'Dein Weg zu Wissen und Wachstum.',
-    lead: 'innovAIte ist eine gemeinnützige Studierenden-Initiative in Wien. Wir erforschen KI gemeinsam, nutzen sie verantwortungsvoll und bringen Automatisierung und Optimierung in Unternehmen.',
+    claim: 'Dein Weg zu Wissen und Wachstum',
+    lead: 'Als gemeinnützige Organisation erforschen wir gemeinsam die KI‒Welt, lernen ihre verantwortungsvolle Nutzung und gestalten die digitale Zukunft',
   },
   fuerDich: {
     title: 'Hier bist du richtig, wenn du …',

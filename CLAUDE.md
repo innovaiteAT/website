@@ -14,6 +14,10 @@ Diese Unterscheidung ist das Wichtigste in dieser Datei.
 
 **Fest (für alle verbindlich, nur nach Absprache mit der Projektleitung ändern):**
 - One-Pager-Prinzip (siehe unten)
+- **Hero-Text, wortwörtlich und unverändert** (steht in `src/i18n/de.ts` unter `hero`). Nicht umformulieren, kürzen, ergänzen oder Satzzeichen ändern, auch nicht für SEO. Gestaltung des Heros ist Spielraum, der Text nicht:
+  - Titel: innovAIte
+  - Claim: Dein Weg zu Wissen und Wachstum
+  - Text: Als gemeinnützige Organisation erforschen wir gemeinsam die KI‒Welt, lernen ihre verantwortungsvolle Nutzung und gestalten die digitale Zukunft
 - Stack: Astro, Cloudflare Workers, D1 (EU), Turnstile, Cloudflare Email Service
 - Brand-Regeln (siehe unten) und `design/brand/`
 - Datenschutz-Rahmen: nur nötige Daten, 12 Monate Löschfrist, keine Tracker ohne Einwilligung
@@ -76,7 +80,7 @@ Quelle der Wahrheit: `docs/BRAND.md` und `design/brand/`. Kurzfassung:
 - Montserrat (300 bis 800). Rot `#7D1717` = Handlung (Pill-Button), Blau `#0181E7` = Information.
 - Höchstens ein roter Button pro Viewport. CTA heißt „Mitglied werden!“ und springt zu `#mitmachen`.
 - Keine neuen Akzentfarben, keine Emojis als Deko, keine Verläufe außer Wellen und Button.
-- Ton: Du-Ansprache, Deutsch, kurze Sätze, auf Augenhöhe. Claim: „Dein Weg zu Wissen und Wachstum.“
+- Ton: Du-Ansprache, Deutsch, kurze Sätze, auf Augenhöhe. Claim: „Dein Weg zu Wissen und Wachstum“
 - Optik darf moderner werden (Layout, Motion, Details). Farben, Logo, Schrift und Ton bleiben.
 
 ## SEO und AEO (fest)
