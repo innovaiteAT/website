@@ -20,7 +20,7 @@ Du pushst nichts, deployst nichts und brauchst keinen Cloudflare-Zugang.
 
 ## Was schon da ist
 
-Die Seite läuft bereits, schlicht und funktional. Alle Pflicht-Sektionen sind da und mit den echten Inhalten befüllt, auch das Bewerbungsformular mit Datenbank. Das ist **deine Ausgangsbasis, kein Design-Vorbild**. Bau es um, wie du willst.
+Die Seite läuft bereits, schlicht und funktional. Alle Pflicht-Sektionen sind da und mit den echten Inhalten befüllt. Das Bewerbungsformular liegt auf `/mitmachen`, inklusive Datenbank und Lebenslauf-Upload. Das ist **deine Ausgangsbasis, kein Design-Vorbild**. Bau es um, wie du willst.
 
 | Was | Wo |
 |---|---|
@@ -31,6 +31,7 @@ Die Seite läuft bereits, schlicht und funktional. Alle Pflicht-Sektionen sind d
 | Fotos (vorerst überall Cosmo) | `src/assets/photos/`, einbinden mit `photoFor()` aus `src/lib/photos.ts` |
 | Bewerbung (Server) | `src/pages/api/bewerbung.ts`, `src/lib/application.ts` |
 | Eingegangene Test-Bewerbungen ansehen | `npm run db:list` |
+| Hochgeladenen Test-Lebenslauf öffnen | `npx wrangler r2 object get innovaite-cv/<cv_key> --local --file cv.pdf` (`cv_key` steht in `db:list`) |
 
 Platzhalter: Die Department-Texte („Beschreibung folgt.“) und die Sätze zu den Partnern kommen noch. Erfinde dafür keine eigenen Inhalte, nimm Platzhalter. So lassen sich die Versionen fair vergleichen.
 

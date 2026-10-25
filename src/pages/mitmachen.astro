@@ -1,0 +1,11 @@
+---
+// Eigene Seite für die Bewerbung (D18). Alle „Mitglied werden!“-Buttons führen hierher.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Mitmachen from '../components/sections/Mitmachen.astro';
+import { de } from '../i18n/de';
+import { breadcrumbs } from '../lib/seo';
+---
+
+<BaseLayout title={de.mitmachen.meta.title} description={de.mitmachen.meta.description} jsonLd={[breadcrumbs([{ name: 'Mitglied werden', path: '/mitmachen' }])]}>
+  <Mitmachen />
+</BaseLayout>

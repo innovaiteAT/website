@@ -46,6 +46,18 @@ export function faqPage(entries: CollectionEntry<'faq'>[]): GraphNode {
   };
 }
 
+export function breadcrumbs(items: { name: string; path: string }[]): GraphNode {
+  return {
+    '@type': 'BreadcrumbList',
+    itemListElement: [{ name: SITE.name, path: '/' }, ...items].map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: item.name,
+      item: new URL(item.path, SITE.url).href,
+    })),
+  };
+}
+
 export function graph(...nodes: GraphNode[]) {
   return { '@context': 'https://schema.org', '@graph': nodes };
 }

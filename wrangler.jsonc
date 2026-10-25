@@ -23,6 +23,14 @@
       "database_id": "00000000-0000-0000-0000-000000000000",
       "migrations_dir": "migrations"
     }
+  ],
+  "r2_buckets": [
+    {
+      // Lebensläufe aus der Bewerbung. Bucket mit `wrangler r2 bucket create innovaite-cv --jurisdiction eu` anlegen.
+      "binding": "CV_BUCKET",
+      "bucket_name": "innovaite-cv",
+      "jurisdiction": "eu"
+    }
   ]
   // TODO Projektleitung: send_email-Binding (Cloudflare Email Service) und Cron-Trigger für die 12-Monats-Löschung
 }

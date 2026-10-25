@@ -1,9 +1,10 @@
 ---
-// Bewerbung. Enthält nur den Pflicht-Rahmen aus docs/APPLICATION-FLOW.md.
+// Bewerbung auf der eigenen Seite /mitmachen. Enthält nur den Pflicht-Rahmen aus docs/APPLICATION-FLOW.md.
 // Zusätzliche Felder einfach ins Formular einbauen: unbekannte Felder landen automatisch in der Spalte `extra`.
 import { getCollection } from 'astro:content';
 import { SITE } from '../../config';
 import { de } from '../../i18n/de';
+import { CV_MAX_BYTES } from '../../lib/application';
 
 const t = de.mitmachen;
 const departments = (await getCollection('departments')).sort((a, b) => a.data.order - b.data.order);
@@ -11,20 +12,20 @@ const departments = (await getCollection('departments')).sort((a, b) => a.data.o
 
 <section id="mitmachen" class="ia-section mitmachen" aria-labelledby="mitmachen-title">
   <div class="ia-container narrow">
-    <h2 id="mitmachen-title">{t.title}</h2>
+    <h1 id="mitmachen-title">{t.title}</h1>
     <p class="ia-lead">{t.lead}</p>
 
     <!-- Rückmeldungen. Ohne JavaScript per Weiterleitung auf #danke bzw. #fehler (CSS :target). -->
     <div id="danke" class="notice" role="status" tabindex="-1">
-      <h3>{t.thanksTitle}</h3>
+      <h2>{t.thanksTitle}</h2>
       <p>{t.thanksText}</p>
     </div>
     <div id="fehler" class="notice notice-error" role="alert" tabindex="-1">
-      <h3>{t.errorTitle}</h3>
+      <h2>{t.errorTitle}</h2>
       <p>{t.errorText}</p>
     </div>
 
-    <form id="bewerbung" method="post" action="/api/bewerbung" novalidate>
+    <form id="bewerbung" method="post" action="/api/bewerbung" enctype="multipart/form-data" novalidate>
       <div class="row">
         <label>
           <span>{t.fields.firstName}</span>
@@ -36,10 +37,16 @@ const departments = (await getCollection('departments')).sort((a, b) => a.data.o
         </label>
       </div>
 
-      <label>
-        <span>{t.fields.email}</span>
-        <input class="ia-field" type="email" name="email" autocomplete="email" required maxlength="200" />
-      </label>
+      <div class="row">
+        <label>
+          <span>{t.fields.email}</span>
+          <input class="ia-field" type="email" name="email" autocomplete="email" required maxlength="200" />
+        </label>
+        <label>
+          <span>{t.fields.phone}</span>
+          <input class="ia-field" type="tel" name="phone" autocomplete="tel" required minlength="6" maxlength="30" pattern="\+?[0-9 ()/\-]+" />
+        </label>
+      </div>
 
       <fieldset>
         <legend>{t.fields.departments}</legend>
@@ -64,6 +71,11 @@ const departments = (await getCollection('departments')).sort((a, b) => a.data.o
         <input class="ia-field" name="sourceDetail" maxlength="300" />
       </label>
 
+      <label>
+        <span>{t.fields.cv}</span>
+        <input class="ia-field file" type="file" name="cv" accept="application/pdf,.pdf" required data-max-bytes={CV_MAX_BYTES} />
+      </label>
+
       <label class="choice consent">
         <input type="checkbox" name="consent" required />
         <span>{t.fields.consent} <a href="/datenschutzerklaerung">{t.fields.consentLink}</a></span>
@@ -81,9 +93,24 @@ const departments = (await getCollection('departments')).sort((a, b) => a.data.o
 <script>
   import { de } from '../../i18n/de';
 
-  // Progressive Enhancement: Absenden ohne Seitenwechsel, Danke-Hinweis direkt in der Sektion.
   const form = document.querySelector<HTMLFormElement>('#bewerbung');
   const button = form?.querySelector<HTMLButtonElement>('button[type="submit"]');
+  const cv = form?.querySelector<HTMLInputElement>('input[name="cv"]');
+
+  // Vorauswahl über /mitmachen?department=<id> (z. B. von den Department-Karten der Startseite)
+  const preselect = new URLSearchParams(location.search).get('department');
+  if (preselect) {
+    const box = form?.querySelector<HTMLInputElement>(`input[name="departments"][value="${CSS.escape(preselect)}"]`);
+    if (box) box.checked = true;
+  }
+
+  // Zu große Datei schon im Browser abfangen
+  cv?.addEventListener('change', () => {
+    const file = cv.files?.[0];
+    cv.setCustomValidity(file && file.size > Number(cv.dataset.maxBytes) ? de.mitmachen.cvTooLarge : '');
+  });
+
+  // Progressive Enhancement: Absenden ohne Seitenwechsel, Danke-Hinweis direkt auf der Seite.
   const show = (id: 'danke' | 'fehler') => {
     document.querySelectorAll('.notice').forEach((n) => n.classList.remove('is-visible'));
     const el = document.getElementById(id);
@@ -112,8 +139,9 @@ const departments = (await getCollection('departments')).sort((a, b) => a.data.o
 </script>
 
 <style>
-  .mitmachen { background: var(--ia-waves); }
+  .mitmachen { background: var(--ia-waves); min-height: calc(100vh - 72px); }
   .narrow { max-width: 640px; }
+  h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; line-height: 1.2; margin: 0 0 1rem; }
   form { display: grid; gap: 1.1rem; }
   .row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.1rem; }
   label > span, legend { display: block; font-weight: 500; margin-bottom: .4rem; }
@@ -125,11 +153,13 @@ const departments = (await getCollection('departments')).sort((a, b) => a.data.o
   .consent span { margin: 0; font-weight: 400; font-size: .95rem; }
   input[type='checkbox'] { width: 1.1rem; height: 1.1rem; accent-color: var(--ia-blue); flex: none; }
   select.ia-field { appearance: auto; }
+  .file { padding: 1rem 1.2rem; min-height: 62px; }
+  .file::file-selector-button { font: inherit; font-weight: 600; color: var(--ia-text); background: var(--ia-surface-2); border: 1px solid var(--ia-border); border-radius: var(--ia-radius-pill); padding: .4rem 1rem; margin-right: 1rem; cursor: pointer; }
   button { justify-self: start; }
 
   .notice { display: none; padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; border: 1px solid var(--ia-blue); border-radius: var(--ia-radius-card); background: var(--ia-surface); }
   .notice-error { border-color: var(--ia-red-bright); }
-  .notice h3 { margin: 0 0 .4rem; }
+  .notice h2 { font-size: 1.2rem; margin: 0 0 .4rem; }
   .notice p { margin: 0; color: var(--ia-text-soft); }
   .notice:target, .notice.is-visible { display: block; }
   #danke:target ~ form { display: none; }

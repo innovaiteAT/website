@@ -5,6 +5,12 @@ export const applicationSchema = z.object({
   firstName: z.string().trim().min(1).max(100),
   lastName: z.string().trim().min(1).max(100),
   email: z.email().max(200),
+  phone: z
+    .string()
+    .trim()
+    .min(6)
+    .max(30)
+    .regex(/^\+?[0-9 ()/-]+$/),
   departments: z.array(z.string().max(60)).min(1),
   source: z.string().trim().min(1).max(100),
   sourceDetail: z.string().trim().max(300).optional(),
@@ -13,12 +19,14 @@ export const applicationSchema = z.object({
 
 export type Application = z.infer<typeof applicationSchema> & { extra: Record<string, string> };
 
-const KNOWN_FIELDS = new Set([...Object.keys(applicationSchema.shape), 'cf-turnstile-response']);
+export const CV_MAX_BYTES = 5 * 1024 * 1024;
+
+const KNOWN_FIELDS = new Set([...Object.keys(applicationSchema.shape), 'cv', 'cf-turnstile-response']);
 
 export function parseApplication(form: FormData, allowedDepartments: string[]) {
   const departments = form.getAll('departments').map(String);
   const result = applicationSchema.safeParse({
-    ...Object.fromEntries([...form.entries()].filter(([key]) => key !== 'departments')),
+    ...Object.fromEntries([...form.entries()].filter(([key]) => key !== 'departments' && key !== 'cv')),
     sourceDetail: form.get('sourceDetail') || undefined,
     departments,
   });
@@ -34,4 +42,15 @@ export function parseApplication(form: FormData, allowedDepartments: string[]) {
     }
   }
   return { ok: true as const, data: { ...result.data, extra } satisfies Application };
+}
+
+/** Lebenslauf prüfen: Pflicht, nur PDF (Dateiinhalt wird geprüft, nicht nur die Endung), höchstens 5 MB. */
+export async function parseCv(form: FormData) {
+  const file = form.get('cv');
+  if (!(file instanceof File) || file.size === 0) return { ok: false as const, issue: 'Lebenslauf fehlt' };
+  if (file.size > CV_MAX_BYTES) return { ok: false as const, issue: 'Lebenslauf ist größer als 5 MB' };
+  const bytes = await file.arrayBuffer();
+  const isPdf = new TextDecoder().decode(bytes.slice(0, 5)) === '%PDF-';
+  if (!isPdf) return { ok: false as const, issue: 'Lebenslauf muss ein PDF sein' };
+  return { ok: true as const, bytes };
 }

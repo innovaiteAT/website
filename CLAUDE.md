@@ -18,14 +18,14 @@ Diese Unterscheidung ist das Wichtigste in dieser Datei.
   - Titel: innovAIte
   - Claim: Dein Weg zu Wissen und Wachstum
   - Text: Als gemeinnützige Organisation erforschen wir gemeinsam die KI‒Welt, lernen ihre verantwortungsvolle Nutzung und gestalten die digitale Zukunft
-- Stack: Astro, Cloudflare Workers, D1 (EU), Turnstile, Cloudflare Email Service
+- Stack: Astro, Cloudflare Workers, D1 (EU), R2 (EU), Turnstile, Cloudflare Email Service
 - Brand-Regeln (siehe unten) und `design/brand/`
 - Datenschutz-Rahmen: nur nötige Daten, 12 Monate Löschfrist, keine Tracker ohne Einwilligung
 - SEO/AEO-Grundregeln, Barrierefreiheit, Definition of Done
 - Alle Einträge unter „Fest“ in `docs/DECISIONS.md`
 
 - Dateistruktur: eine Datei pro Sektion in `src/components/sections/` mit den Namen aus `docs/ARCHITECTURE.md`, Inhalte in Content Collections. So lassen sich Sektionen aus verschiedenen Versionen später kombinieren.
-- Pflicht-Sektionen: Hero, Über uns, Was wir machen, Departments, Partner, Team, FAQ, Mitmachen, Footer
+- Pflicht-Sektionen der Startseite: Hero, Über uns, Was wir machen, Departments, Partner, Team, FAQ, Footer. Dazu die Bewerbungsseite `/mitmachen`.
 
 **Spielraum (wer die Version baut, entscheidet selbst):**
 - Gestaltung jeder Sektion: Layout, Animation, Bildsprache, Komponentenaufbau
@@ -39,17 +39,17 @@ Diese Unterscheidung ist das Wichtigste in dieser Datei.
 
 ## One-Pager-Prinzip (fest)
 
-- Alle Inhalte stehen auf **einer Seite** (`/`), gegliedert in Sektionen mit Anker-IDs (`#team`, `#faq`, `#mitmachen` …).
+- Alle Inhalte stehen auf **einer Seite** (`/`), gegliedert in Sektionen mit Anker-IDs (`#team`, `#faq`, `#partner` …).
 - Navigation = Sprunglinks zu Sektionen, sanftes Scrollen, aktive Sektion im Header markiert.
-- Der Bewerbungs-Wizard ist eine Sektion (`#mitmachen`), keine eigene Seite. Danke-Zustand erscheint direkt in der Sektion.
-- Einzige Zusatzseiten: `/impressum`, `/datenschutzerklaerung` (rechtlich nötig) und `404`. Keine weiteren Unterseiten anlegen.
+- **Ausnahme:** Die Bewerbung „Werde Teil des Teams!“ hat eine eigene Seite `/mitmachen` (D18). Danke-Zustand erscheint direkt auf dieser Seite.
+- Einzige Zusatzseiten: `/mitmachen`, `/impressum`, `/datenschutzerklaerung` (rechtlich nötig) und `404`. Keine weiteren Unterseiten anlegen.
 - Sektionsreihenfolge und Anker: siehe `docs/ARCHITECTURE.md`.
 
 ## Stack
 
 - **Astro** (statisch vorgerendert) mit `@astrojs/cloudflare`
 - **Cloudflare Workers** + Static Assets
-- **D1** (Jurisdiction `eu`) für Bewerbungen, **Turnstile** gegen Spam
+- **D1** (Jurisdiction `eu`) für Bewerbungen, **R2** (Jurisdiction `eu`) für Lebensläufe, **Turnstile** gegen Spam
 - **API-Endpoint** `src/pages/api/bewerbung.ts` für das Absenden des Bewerbungsformulars (funktioniert mit und ohne JavaScript), **Cloudflare Email Service** für Mails
 - Styling: eigenes CSS mit den Tokens aus `design/brand/innovaite.css`, kein UI-Framework
 - TypeScript strict, Inhalte als Astro Content Collections (`src/content/`)
@@ -78,7 +78,7 @@ Quelle der Wahrheit: `docs/BRAND.md` und `design/brand/`. Kurzfassung:
 - Offizielles Logo: `design/brand/innovaite_logo.png`. Icons und Favicons: `design/brand/innovaite_logo_sticker.png` (innovAIte-Kreis). Logo nie nachzeichnen ohne Abgleich mit dem PNG, nie verzerren oder umfärben.
 - Dunkler Grund `#010308`, helle Abschnitte `#F8F8F8`. Nie reines Weiß als Seitenhintergrund.
 - Montserrat (300 bis 800). Rot `#7D1717` = Handlung (Pill-Button), Blau `#0181E7` = Information.
-- Höchstens ein roter Button pro Viewport. CTA heißt „Mitglied werden!“ und springt zu `#mitmachen`.
+- Höchstens ein roter Button pro Viewport. CTA heißt „Mitglied werden!“ und führt auf `/mitmachen`.
 - Keine neuen Akzentfarben, keine Emojis als Deko, keine Verläufe außer Wellen und Button.
 - Ton: Du-Ansprache, Deutsch, kurze Sätze, auf Augenhöhe. Claim: „Dein Weg zu Wissen und Wachstum“
 - Optik darf moderner werden (Layout, Motion, Details). Farben, Logo, Schrift und Ton bleiben.
@@ -96,7 +96,7 @@ Details und Checkliste: `docs/SEO-AEO.md`. Weil alles auf einer URL liegt, zähl
 ## Konventionen
 
 - Sektionen als eigene Komponenten in `src/components/sections/`, zusammengesetzt in `src/pages/index.astro`. Eine Sektion soll möglichst für sich funktionieren (eigene Styles im Component, nur Tokens und `ui/`-Bausteine von außen), damit sie in eine andere Version übertragbar ist.
-- Anker-IDs deutsch, klein, mit Bindestrich (`#ueber-uns`, `#mitmachen`). Einmal veröffentlichte Anker nicht mehr umbenennen.
+- Anker-IDs deutsch, klein, mit Bindestrich (`#ueber-uns`, `#was-wir-machen`). Einmal veröffentlichte Anker nicht mehr umbenennen.
 - Inhalte (Team, FAQ, Departments, Partner) gehören in Content Collections, UI-Texte in `src/i18n/de.ts`. Keine sichtbaren Strings direkt in Komponenten (Englisch kommt später).
 - Fotos (Team, später Events) immer über `photoFor()` aus `src/lib/photos.ts` mit `<Image>` aus `astro:assets` einbinden. Vorerst zeigt jedes Foto den Platzhalter `src/assets/photos/cosmo_standing.jpeg` (`photosPlaceholderOnly` in `src/config.ts`). Keine Stockfotos, keine KI-generierten Personenfotos.
 - Client-JS nur als Astro Island, wo es wirklich gebraucht wird (Bewerbungs-Wizard, aktive Navigation).

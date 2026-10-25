@@ -46,7 +46,9 @@
 - [ ] Inhalte in Content Collections, Texte im innovAIte-Ton überarbeiten
 
 ### Phase 4: Bewerbungsprozess
-- [ ] Mehrstufiger Wizard in `#mitmachen` (`docs/APPLICATION-FLOW.md`)
+- [ ] Mehrstufiger Wizard auf `/mitmachen` (`docs/APPLICATION-FLOW.md`)
+- [x] Telefonnummer und Lebenslauf-Upload (R2, lokal getestet)
+- [ ] R2-Bucket `innovaite-cv` mit `--jurisdiction eu` im Cloudflare-Account anlegen (Projektleitung)
 - [x] Endpoint + Validierung (Zod) + Turnstile + D1 (Grundgerüst steht)
 - [ ] Benachrichtigung ans Team und Bestätigungs-Mail an Bewerber:innen
 - [ ] Einfache Übersicht für das Team (Export CSV oder geschützte Admin-Ansicht)
@@ -64,7 +66,7 @@
 
 ## Nicht-Ziele (vorerst)
 
-- Keine Unterseiten außer Impressum, Datenschutz und 404.
+- Keine Unterseiten außer `/mitmachen`, Impressum, Datenschutz und 404.
 - Kein CMS. Inhalte pflegen wir als Markdown/JSON im Repo.
 - Keine Mehrsprachigkeit (Englisch eventuell später).
 - Kein Login für Mitglieder.

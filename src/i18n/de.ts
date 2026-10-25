@@ -73,12 +73,19 @@ export const de = {
     title: 'Häufige Fragen',
   },
   mitmachen: {
+    meta: {
+      title: 'Mitglied werden – innovAIte',
+      description: 'Werde Mitglied bei innovAIte, der KI-Studierendeninitiative in Wien. Kostenlos, ohne Vorkenntnisse. Bewirb dich in zwei Minuten.',
+    },
     title: 'Werde Teil des Teams!',
+    cvTooLarge: 'Dein Lebenslauf ist größer als 5 MB.',
     lead: 'Mitmachen ist kostenlos und braucht keine Vorkenntnisse. Füll das Formular aus, wir melden uns bei dir.',
     fields: {
       firstName: 'Vorname',
       lastName: 'Nachname',
       email: 'E-Mail',
+      phone: 'Telefonnummer',
+      cv: 'Lebenslauf (PDF, max. 5 MB)',
       departments: 'Welche Departments interessieren dich?',
       unsure: 'Weiß ich noch nicht',
       source: 'Wo hast du von uns gehört?',

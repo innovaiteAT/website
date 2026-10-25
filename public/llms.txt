@@ -19,7 +19,7 @@
 - [Partner](https://innovaite.at/#partner): Unsere Partnerschaften
 - [Team](https://innovaite.at/#team): Leitung und Mitglieder
 - [FAQ](https://innovaite.at/#faq): Häufige Fragen zu Mitgliedschaft, Kosten und Zeitaufwand
-- [Mitglied werden](https://innovaite.at/#mitmachen): Bewerbung
+- [Mitglied werden](https://innovaite.at/mitmachen): Bewerbung
 
 ## Rechtliches
 

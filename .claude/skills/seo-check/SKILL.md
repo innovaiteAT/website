@@ -8,7 +8,7 @@ description: Vollständiger SEO- und AEO-Check des innovAIte-One-Pagers (Build, 
 1. `npm run build` ausführen. Bei Fehlern abbrechen und Fehler melden.
 2. Agent `seo-aeo-reviewer` auf `dist/` ansetzen.
 3. Zusätzlich prüfen:
-   - Sitemap enthält genau `/`, `/impressum`, `/datenschutzerklaerung`.
+   - Sitemap enthält genau `/`, `/mitmachen`, `/impressum`, `/datenschutzerklaerung`.
    - `dist/robots.txt` verlinkt die Sitemap und blockiert keine KI-Crawler.
    - `dist/llms.txt` nennt die Kernfakten und die aktuellen Anker.
    - Alle `href="#…"` in Navigation und Buttons zeigen auf existierende IDs, keine ID doppelt.

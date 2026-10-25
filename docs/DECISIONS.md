@@ -10,7 +10,7 @@ Hier stehen nur die **festen** Entscheidungen. Sie gelten für jede Version und 
 | D2 | Cloudflare Workers + Static Assets statt Pages | Cloudflares empfohlener Weg für neue Projekte, D1/Turnstile direkt gebunden |
 | D3 | Kein CMS, Inhalte im Repo | Kleines Team, technisch versiert, keine Zusatzkosten |
 | D4 | Eigenes CSS mit Brand-Tokens statt Tailwind | Tokens existieren schon, weniger Abhängigkeiten, Brand bleibt exakt |
-| D5 | Website bleibt ein One-Pager | Vorgabe des Vereins. Nur Impressum, Datenschutz und 404 als eigene URLs. Bewerbung als Sektion `#mitmachen`. |
+| D5 | Website bleibt ein One-Pager | Vorgabe des Vereins. Nur Impressum, Datenschutz, 404 und (seit D18) `/mitmachen` als eigene URLs. |
 | D6 | Departments: Operations, IT, Finance, Corporate Relations, Marketing, Sustainability Compliance, Legal | Vorgabe des Vereins. Im Wizard zusätzlich „Weiß ich noch nicht“. |
 | D7 | Mailversand über Cloudflare Email Service | Alles bei Cloudflare, kein weiterer Auftragsverarbeiter. Absender z. B. `noreply@innovaite.at`. |
 | D8 | Bewerbungen gehen an `join@innovaite.at`, `raphael.zaehrer@innovaite.at`, `patrik.stachura@innovaite.at` | Empfänger als Variable `APPLICATION_RECIPIENTS` in `wrangler.jsonc`, nicht im Code. |
@@ -22,6 +22,8 @@ Hier stehen nur die **festen** Entscheidungen. Sie gelten für jede Version und 
 | D15 | Eigene Sektion `#partner` mit Torino, Basenbox, WU Wien, Raiffeisen Software, Roiss-Weiss GmbH | Partnerschaften zeigen Glaubwürdigkeit (auch für SEO/AEO). Logos in `design/partners/`. |
 | D16 | Hero-Text ist fest und wird wortwörtlich übernommen (Titel, Claim, Text siehe CLAUDE.md) | Vorgabe des Vereins (25.10.2026) |
 | D17 | Im Hero-Titel ist „AI“ weiß statt rot und nicht fett. Logo und Wortmarke anderswo bleiben mit rotem „AI“ | Vorgabe des Vereins (25.10.2026) |
+| D18 | Bewerbung „Werde Teil des Teams!“ auf eigener Seite `/mitmachen` | Vorgabe des Vereins (25.10.2026). Ausnahme vom One-Pager (D5). |
+| D19 | Telefonnummer und Lebenslauf (PDF, max. 5 MB) sind Pflicht. Lebensläufe in R2 (EU), gleiche 12-Monats-Löschfrist | Vorgabe des Vereins (25.10.2026) |
 | D13 | Keine Redirects nötig | Alte Sitemap hat nur `/`, `/impressum`, `/datenschutzerklaerung`, genau unsere URLs. |
 
 ## Domain und DNS (Ist-Stand 25.10.2026)

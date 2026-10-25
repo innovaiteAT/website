@@ -21,7 +21,7 @@ Wir haben im Kern eine URL. Das ist für einen Verein unserer Größe gut machba
 
 ## Technik (einmalig)
 
-- [ ] Sitemap: nur `/`, `/impressum`, `/datenschutzerklaerung`. Robots.txt verlinkt sie.
+- [ ] Sitemap: nur `/`, `/mitmachen`, `/impressum`, `/datenschutzerklaerung`. Robots.txt verlinkt sie.
 - [ ] `robots.txt`: Suchmaschinen und KI-Crawler (GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot, Google-Extended) erlauben
 - [ ] **Cloudflare**: „Block AI bots“ und „AI Labyrinth“ deaktivieren, Managed robots.txt prüfen. Sonst sehen uns KI-Antwortmaschinen nicht.
 - [ ] `llms.txt` im Root: kurze Beschreibung von innovAIte, Kernfakten, Links auf die Anker (`/#faq`, `/#team` …)
